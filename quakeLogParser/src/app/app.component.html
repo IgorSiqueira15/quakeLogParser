@@ -1,0 +1,26 @@
+<p>Insira o Arquivo .log abaixo:</p>
+
+<input type="file" #file (change)="readFile($event)" />
+
+<div class="tables-container">
+  <table
+    style="width: 100%"
+    class="col-md-3"
+    *ngFor="let kill of kills; let i = index"
+  >
+    <thead>
+      <th>Nº Jogo</th>
+      <th>Total de Kills</th>
+      <th>Players</th>
+      <th>Kills</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let player of players">
+        <td>{{ i + 1 }}</td>
+        <td>{{ kill ? kill : "0" }}</td>
+        <td>{{ player }}</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
